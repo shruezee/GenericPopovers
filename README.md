@@ -32,3 +32,4 @@ Please see the popOverSampleUsage for details on calling and overriding popOverB
 -Important Informtion
  GenericPopOver is written for Portrait only and without using autolayouts so it is required to disable autolayout and size class in storyboard for subclasses.
 
+![generic-popover-notransition](https://user-images.githubusercontent.com/23718584/48245298-37cbab80-e43e-11e8-9a71-5518b8ceec66.gif)
