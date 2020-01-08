@@ -133,7 +133,7 @@ extension UIButton {
         }
         
         if let _textColor = params["textColor"] as? UIColor {
-            self.setTitleColor(_textColor, for: UIControlState())
+            self.setTitleColor(_textColor, for: UIControl.State())
         }
         
         if let _font = params["font"] as? UIFont {
@@ -141,11 +141,11 @@ extension UIButton {
         }
         
         if let _textForTitle = params["titleText"] as? String {
-            self.setTitle(_textForTitle, for: UIControlState())
+            self.setTitle(_textForTitle, for: UIControl.State())
         }
         
         if let _bgImage = params["bgImage"] as? UIImage {
-            self.setBackgroundImage(_bgImage, for: UIControlState())
+            self.setBackgroundImage(_bgImage, for: UIControl.State())
         }
         
     }

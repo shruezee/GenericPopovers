@@ -77,7 +77,7 @@ class PopOverViewController: UIViewController, UIGestureRecognizerDelegate {
         tapRecognizer.delegate = self
         view.addGestureRecognizer(tapRecognizer)
     }
-    func dismiss(sender: AnyObject) {
+    @objc func dismiss(sender: AnyObject) {
         self.dimmingVIew.alpha = 0
         
         UIView.animate(withDuration: 0.3, animations: {
@@ -143,7 +143,7 @@ class PopOverViewController: UIViewController, UIGestureRecognizerDelegate {
         
         let btnClose = UIButton(frame: CGRect(x: view.frame.size.width - (margin.width * 2) - (buttonWidth * 2), y: viewY + 10, width: buttonWidth, height: buttonWidth))
         //btnClose.setTitle("X", forState: .Normal)
-        btnClose.setBackgroundImage(UIImage(named: "popover-close-icon.png"), for: UIControlState())
+        btnClose.setBackgroundImage(UIImage(named: "popover-close-icon.png"), for: UIControl.State())
         btnClose.addTarget(self, action: #selector(dismiss(sender:)), for: .touchUpInside)
         viewHeader.addSubview(btnClose)
         

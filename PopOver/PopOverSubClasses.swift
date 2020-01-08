@@ -199,7 +199,7 @@ class ImageContentViewController: PopOverViewController {
 class InputContentViewController: PopOverViewController, UITextFieldDelegate {
     var viewButtons: UIView = UIView()
     
-    func button1Pressed(sender: UIButton) {
+    @objc func button1Pressed(sender: UIButton) {
         print("button 1 pressed with title \(String(describing: sender.titleLabel?.text))")
         dismiss(sender: sender)
     }
@@ -246,7 +246,7 @@ class InputContentViewController: PopOverViewController, UITextFieldDelegate {
     }
     
     private func setupAppearences(forButton:UIButton) {
-        forButton.setTitleColor(UIColor.white, for: UIControlState())
+        forButton.setTitleColor(UIColor.white, for: UIControl.State())
         forButton.backgroundColor  = ThemeColour().lightOfGrey
         forButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 15)
     }
@@ -255,14 +255,14 @@ class InputContentViewController: PopOverViewController, UITextFieldDelegate {
         viewButtons.backgroundColor = UIColor.clear
         
         let button1 = UIButton(type: .system)
-        button1.setTitle("YES", for: UIControlState())
+        button1.setTitle("YES", for: UIControl.State())
         button1.addTarget(self, action: #selector(button1Pressed(sender:)), for: .touchUpInside)
         button1.frame = CGRect(x: 0, y: 50, width: viewButtons.frame.size.width / 2, height: 50)
         
         setupAppearences(forButton: button1)
         
         let button2 = UIButton(type: .system)
-        button2.setTitle("NO", for: UIControlState())
+        button2.setTitle("NO", for: UIControl.State())
         button2.addTarget(self, action: #selector(button1Pressed(sender:)), for: .touchUpInside)
         button2.frame = button1.frame
         button2.frame.origin.x = (viewButtons.frame.size.width / 2)
@@ -320,11 +320,11 @@ class InputContentViewController: PopOverViewController, UITextFieldDelegate {
 class AlertViewController: PopOverViewController {
     var viewButtons: UIView = UIView()
     
-    func button1Pressed(sender: UIButton) {
+    @objc func button1Pressed(sender: UIButton) {
         print("button 1 pressed with title \(String(describing: sender.titleLabel?.text))")
         dismiss(sender: sender)
     }
-    func button2Pressed(sender: UIButton) {
+    @objc func button2Pressed(sender: UIButton) {
         print("button 2 pressed with title \(String(describing: sender.titleLabel?.text))")
         dismiss(sender: sender)
     }
@@ -385,7 +385,7 @@ class AlertViewController: PopOverViewController {
     }
     
     private func setupAppearences(forButton:UIButton) {
-        forButton.setTitleColor(UIColor.white, for: UIControlState())
+        forButton.setTitleColor(UIColor.white, for: UIControl.State())
         forButton.backgroundColor  = ThemeColour().greyColour
         forButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 15)
     }
@@ -394,14 +394,14 @@ class AlertViewController: PopOverViewController {
         viewButtons.backgroundColor = UIColor.clear
         
         let button1 = UIButton(type: .system)
-        button1.setTitle("Cancel", for: UIControlState())
+        button1.setTitle("Cancel", for: UIControl.State())
         button1.addTarget(self, action: #selector(button1Pressed(sender:)), for: .touchUpInside)
         button1.frame = CGRect(x: 0, y: 0, width: (viewButtons.frame.size.width / 2) - 1, height: 50)
         
         setupAppearences(forButton: button1)
         
         let button2 = UIButton(type: .system)
-        button2.setTitle("OK", for: UIControlState())
+        button2.setTitle("OK", for: UIControl.State())
         button2.addTarget(self, action: #selector(button2Pressed(sender:)), for: .touchUpInside)
         button2.frame = button1.frame
         button2.frame.origin.x = (viewButtons.frame.size.width / 2)
