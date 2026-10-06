@@ -1,35 +1,39 @@
 # GenericPopovers
 
-This is a generic Alert/popOver without transition delegates. PopOver base class has a header template whose card color , title and SubTitle text are changable.
+**Reusable, themeable popover and alert views for UIKit**, built from one base class so every popover in an app shares the same header, card style, and close behaviour.
+
+<p>
+  <img alt="Swift" src="https://img.shields.io/badge/Swift-5.0-orange?style=flat-square">
+  <img alt="UIKit" src="https://img.shields.io/badge/UIKit-popovers-blue?style=flat-square">
+  <img alt="Built" src="https://img.shields.io/badge/Built-2018----2020-lightgrey?style=flat-square">
+</p>
+
+![Generic popovers demo](https://user-images.githubusercontent.com/23718584/48245298-37cbab80-e43e-11e8-9a71-5518b8ceec66.gif)
+
+## What it demonstrates
+
+- A `PopOverBaseViewController` with a reusable header template: card colour, title, and subtitle are configurable per popover
+- Subclasses override stored properties (title, subtitle, content height) and add their own content view: image, table, or text input
+- A `closePressedCallback` contract so every subclass dismisses consistently
+- Keyboard-aware text input popovers that shift their content when needed
+- Custom fonts and shared theming through a small `Utils` helper
+
+## Project structure
 
 ```
-# PopOverBaseViewController :
+PopOver/
+├── PopoverBaseViewController.swift   Base class: header, card, close callback
+├── PopOverSubClasses.swift           Image, table and input popovers
+├── PopOverCallingClass.swift         Example of presenting each popover
+└── Utils.swift                       Colours, fonts and helpers
 ```
 
-1. Returns closePressedCallback : must be implemented by subclass to dismiss popover
-2. Stored Properties : subclass must override stored properties to get new title, subtitle, contentHeight
-* viewContent should be added with contentsubview
+## Running it
 
-```
-# Example to add viewcontent :-
-```
+Open `GenericPopovers.xcodeproj` in Xcode and run on an iPhone simulator. The popovers were designed for portrait without Auto Layout, so keep size classes off in the subclasses' storyboards.
 
-imageContentView.removeFromSuperview()
-imageContentView.frame = viewContent.bounds
-viewContent.addSubview(imageContentView)
+This project was later turned into a reusable framework: **[SwiftGenericAlertViewController](https://github.com/shruezee/SwiftGenericAlertViewController)**.
 
-In case of textInput override textfeild delegate methods to set offset of view if required: Please refer input viewcontroller for detailed implementation
+---
 
-Please see the popOverSampleUsage for details on calling and overriding popOverBaseClass
-
-```
-# Prerequisities :-
-```
-1. Utils.Swift
-2. Custom font added to pList and Font folder should be imported
-4. Add all assets from Assets.xcassets
-
--Important Informtion
- GenericPopOver is written for Portrait only and without using autolayouts so it is required to disable autolayout and size class in storyboard for subclasses.
-
-![generic-popover-notransition](https://user-images.githubusercontent.com/23718584/48245298-37cbab80-e43e-11e8-9a71-5518b8ceec66.gif)
+Built by **[Shruthi](https://github.com/shruezee)**, iOS developer in Sydney. See my latest apps: **[KindDose](https://github.com/shruezee/KindDose)** and **[MiniMingle Games](https://github.com/shruezee/MiniMingle-Games)**.
