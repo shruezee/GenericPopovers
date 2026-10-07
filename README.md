@@ -36,4 +36,4 @@ This project was later turned into a reusable framework: **[SwiftGenericAlertVie
 
 ---
 
-Built by **[Shruthi](https://github.com/shruezee)**, iOS developer in Sydney. See my latest apps: **[KindDose](https://github.com/shruezee/KindDose)** and **[MiniMingle Games](https://github.com/shruezee/MiniMingle-Games)**.
+Built by **[Shruthi](https://github.com/shruezee)**, iOS developer in Sydney. See my latest apps from **Shruezee Studio**: **[Ashtotra](https://github.com/shruezee/Ashtotra-App)** (live on the App Store), **[KindDose](https://github.com/shruezee/KindDose)** and **[MiniMingle Games](https://github.com/shruezee/MiniMingle-Games)**.
